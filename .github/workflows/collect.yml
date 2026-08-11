@@ -1,0 +1,44 @@
+name: 公演情報を更新
+
+on:
+  schedule:
+    - cron: "17 21 * * *" # 日本時間 06:17
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: concert-collection
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/cache@v4
+        with:
+          path: .cache/http
+          key: concert-http-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: concert-http-${{ runner.os }}-
+      - run: npm ci
+      - run: npm test
+      - run: npm run collect
+      - name: 変更がある場合だけ保存
+        shell: bash
+        run: |
+          if git diff --quiet -- public/data/concerts.json; then
+            echo "変更はありません"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/concerts.json
+          git commit -m "公演情報を自動更新"
+          git push
