@@ -20,7 +20,10 @@ export function parseConcertPage(html, pageUrl, source, fetchedAt, contentHash =
   const $ = cheerio.load(html);
   if (source.key === "smash") return fromSmash($, pageUrl, source, fetchedAt, contentHash);
   if (source.key === "udo") return fromUdo($, pageUrl, source, fetchedAt, contentHash);
+  if (source.key === "creativeman") return fromCreativeman($, pageUrl, source, fetchedAt, contentHash);
   if (source.key === "udiscovermusic") return fromUdiscover($, pageUrl, source, fetchedAt, contentHash);
+  if (source.key === "kpop-concert-nav") return fromKpopConcertNav($, pageUrl, source, fetchedAt, contentHash);
+  if (source.key === "kpop-music-now") return fromKpopMusicNow($, pageUrl, source, fetchedAt, contentHash);
   const pageText = $("body").text();
   if (!/(来日|初来日|JAPAN\s*(?:TOUR|LIVE|SHOW)|IN\s+JAPAN)/i.test(pageText)) return [];
   const events = extractJsonLd($).flatMap(flattenEvents);
@@ -28,6 +31,117 @@ export function parseConcertPage(html, pageUrl, source, fetchedAt, contentHash =
   if (parsed.length) return parsed;
   const fallback = fromVisibleText($, pageUrl, source, fetchedAt, contentHash);
   return fallback ? [fallback] : [];
+}
+
+function fromCreativeman($, pageUrl, source, fetchedAt, contentHash) {
+  const metaTitle = clean($('meta[property="og:title"]').attr("content") || $("title").text());
+  const artistName = clean(metaTitle.split(/[|｜]/)[0].replace(/\s+20\d{2}.*$/, ""));
+  if (!artistName) return [];
+  const items = [];
+  $(".ticket-info").each((_, section) => {
+    const heading = clean($(section).find("h3").first().text());
+    const dateMatch = heading.match(/(20\d{2})\.(\d{1,2})\.(\d{1,2})/);
+    const venueName = clean($(section).find("h3 > span").last().text());
+    if (!dateMatch || !venueName) return;
+    const sectionText = clean($(section).text());
+    const startTime = sectionText.match(/START\s*(\d{1,2}:\d{2})/i)?.[1] ?? null;
+    const saleMatch = sectionText.match(/一般発売日\s*[:：]?\s*(\d{1,2})\/(\d{1,2})/);
+    const performanceYear = Number(dateMatch[1]);
+    const performanceMonth = Number(dateMatch[2]);
+    const saleYear = saleMatch && Number(saleMatch[1]) > performanceMonth ? performanceYear - 1 : performanceYear;
+    const generalSaleAt = saleMatch ? parseJapaneseDateTime(`${saleMatch[1]}/${saleMatch[2]}`, String(saleYear)) : null;
+    const presaleInfo = $(section).find(".early-ticket h4").map((__, item) => ({ label: clean($(item).text()) })).get().filter((item) => item.label).slice(0, 5);
+    items.push(record({ artistName, title: metaTitle, performanceDate: `${dateMatch[1]}-${dateMatch[2].padStart(2, "0")}-${dateMatch[3].padStart(2, "0")}`, startTime, venueName, prefecture: inferPrefecture(heading, venueName), status: /(?:公演)?中止/.test(sectionText) ? "cancelled" : /延期/.test(sectionText) ? "postponed" : "scheduled", generalSaleAt, presaleInfo, pageUrl, source, fetchedAt, contentHash }));
+  });
+  return items;
+}
+
+function fromKpopConcertNav($, pageUrl, source, fetchedAt, contentHash) {
+  const payload = $("script").map((_, element) => {
+    const script = $(element).html() ?? "";
+    const match = script.match(/^self\.__next_f\.push\((\[.*\])\)$/s);
+    if (!match) return "";
+    try { const value = JSON.parse(match[1]); return typeof value[1] === "string" ? value[1] : ""; } catch { return ""; }
+  }).get().join("\n");
+  const items = [];
+  for (const event of extractEventObjects(payload)) {
+    const iso = typeof event.eventDate === "string" ? event.eventDate.replace(/^\$D/, "") : "";
+    if (!iso || !event.venueName || !event.artist?.name || event.isVisible === false) continue;
+    const performanceDate = dateInJapan(iso);
+    if (!performanceDate || performanceDate < dateInJapan(fetchedAt)) continue;
+    const sourceUrl = /^https:\/\//.test(event.sourceUrl ?? "") ? event.sourceUrl : pageUrl;
+    items.push(record({ artistName: clean(event.artist.name), title: clean(event.title), performanceDate, startTime: timeInJapan(iso), venueName: clean(event.venueName), prefecture: clean(event.prefecture) || inferPrefecture(event.venueName), status: /cancel/i.test(event.status) ? "cancelled" : /postpon/i.test(event.status) ? "postponed" : "scheduled", generalSaleAt: toIso((event.ticketSaleStart ?? "").replace(/^\$D/, "")), presaleInfo: [], pageUrl: sourceUrl, source, fetchedAt, contentHash }));
+  }
+  return items;
+}
+
+function extractEventObjects(payload) {
+  const items = [];
+  let cursor = 0;
+  while ((cursor = payload.indexOf('{"id":', cursor)) >= 0) {
+    const end = balancedObjectEnd(payload, cursor);
+    if (end < 0) break;
+    const candidate = payload.slice(cursor, end);
+    if (candidate.includes('"eventDate"') && candidate.includes('"venueName"')) {
+      try { items.push(JSON.parse(candidate)); } catch { /* Next.jsのイベント以外は無視 */ }
+    }
+    cursor = end;
+  }
+  return items;
+}
+
+function balancedObjectEnd(text, start) {
+  let depth = 0;
+  let quoted = false;
+  let escaped = false;
+  for (let index = start; index < text.length; index += 1) {
+    const char = text[index];
+    if (quoted) {
+      if (escaped) escaped = false;
+      else if (char === "\\") escaped = true;
+      else if (char === '"') quoted = false;
+      continue;
+    }
+    if (char === '"') quoted = true;
+    else if (char === "{") depth += 1;
+    else if (char === "}" && --depth === 0) return index + 1;
+  }
+  return -1;
+}
+
+function fromKpopMusicNow($, pageUrl, source, fetchedAt, contentHash) {
+  const items = [];
+  $('a[href^="/event/"]').each((_, element) => {
+    const heading = clean($(element).find("h3").text());
+    const schedule = clean($(element).find("p").text());
+    const separator = heading.lastIndexOf(" @");
+    const dateMatch = schedule.match(/(20\d{2})\/(\d{2})\/(\d{2})/);
+    if (separator < 1 || !dateMatch) return;
+    const performanceDate = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
+    if (performanceDate < dateInJapan(fetchedAt)) return;
+    const title = heading.slice(0, separator);
+    const venueName = heading.slice(separator + 2);
+    const startTime = schedule.match(/開演\s*(\d{1,2}:\d{2})/)?.[1] ?? null;
+    const detailUrl = new URL($(element).attr("href"), pageUrl).toString();
+    items.push(record({ artistName: artistFromKpopTitle(title), title, performanceDate, startTime, venueName, prefecture: inferPrefecture(venueName), status: "scheduled", generalSaleAt: null, presaleInfo: [], pageUrl: detailUrl, source, fetchedAt, contentHash }));
+  });
+  return items;
+}
+
+function artistFromKpopTitle(title) {
+  const stripped = title.replace(/^20\d{2}(?:-\d{2})?\s+/, "");
+  const marker = stripped.search(/\s+(?:(?:\d+(?:ST|ND|RD|TH)|JAPAN|ASIA|WORLD)\s+)*(?:TOUR|CONCERT|LIVE|FAN[- ]?(?:CON|MEETING)|SHOWCASE)\b/i);
+  return clean(marker > 0 ? stripped.slice(0, marker) : stripped);
+}
+
+function dateInJapan(value) {
+  if (!value || Number.isNaN(Date.parse(value))) return null;
+  return new Date(value).toLocaleDateString("sv-SE", { timeZone: "Asia/Tokyo" });
+}
+
+function timeInJapan(value) {
+  if (!value || Number.isNaN(Date.parse(value))) return null;
+  return new Date(value).toLocaleTimeString("ja-JP", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Asia/Tokyo" });
 }
 
 function fromUdo($, pageUrl, source, fetchedAt, contentHash) {
@@ -137,14 +251,27 @@ function fromJsonLd(event, pageUrl, source, fetchedAt, contentHash) {
 
 function fromVisibleText($, pageUrl, source, fetchedAt, contentHash) {
   $("script,style,noscript,svg").remove();
-  const text = $("body").text().replace(/[\t\r]+/g, " ").replace(/\n+/g, "\n");
+  const blockText = $("body").find("p,li,h1,h2,h3,h4,dt,dd").map((_, element) => clean($(element).text())).get().filter(Boolean).join("\n");
+  const text = (blockText || $("body").text()).replace(/[\t\r]+/g, " ").replace(/\n+/g, "\n");
   const title = clean($("h1").first().text() || $("title").text());
-  const dateMatch = text.match(/(20\d{2})[年/.\-]\s*(\d{1,2})[月/.\-]\s*(\d{1,2})日?/);
-  const venueMatch = text.match(/(?:会場|VENUE|Venue)\s*[:：]?\s*([^\n|]{2,60})/);
-  if (!title || !dateMatch || !venueMatch) return null;
+  const schedule = findScheduleBlock(text);
+  if (!title || !schedule) return null;
+  const { dateMatch, venueMatch, context } = schedule;
   const performanceDate = `${dateMatch[1]}-${dateMatch[2].padStart(2, "0")}-${dateMatch[3].padStart(2, "0")}`;
   const generalMatch = text.match(/(?:一般発売|一般販売)(?:日|開始)?\s*[:：]?\s*((?:20\d{2}[年/.\-])?\s*\d{1,2}[月/.\-]\s*\d{1,2}日?(?:[^\n]{0,15}\d{1,2}[:：]\d{2})?)/);
-  return record({ artistName: artistFromTitle(title), title, performanceDate, startTime: null, venueName: clean(venueMatch[1]), prefecture: inferPrefecture(text.slice(Math.max(0, venueMatch.index - 100), (venueMatch.index ?? 0) + 150), venueMatch[1]), status: /中止/.test(text) ? "cancelled" : /延期/.test(text) ? "postponed" : "scheduled", generalSaleAt: generalMatch ? parseJapaneseDateTime(generalMatch[1], dateMatch[1]) : null, presaleInfo: extractPresales(text), pageUrl, source, fetchedAt, contentHash });
+  return record({ artistName: artistFromTitle(title), title, performanceDate, startTime: context.match(/(?:START|開演)\s*[:：]?\s*(\d{1,2}:\d{2})/i)?.[1] ?? null, venueName: clean(venueMatch[1]), prefecture: inferPrefecture(context, venueMatch[1]), status: /中止/.test(context) ? "cancelled" : /延期/.test(context) ? "postponed" : "scheduled", generalSaleAt: generalMatch ? parseJapaneseDateTime(generalMatch[1], dateMatch[1]) : null, presaleInfo: extractPresales(text), pageUrl, source, fetchedAt, contentHash });
+}
+
+function findScheduleBlock(text) {
+  const lines = text.split("\n").map(clean).filter(Boolean);
+  for (let index = 0; index < lines.length; index += 1) {
+    const dateMatch = lines[index].match(/(20\d{2})[年/.\-]\s*(\d{1,2})[月/.\-]\s*(\d{1,2})日?/);
+    if (!dateMatch) continue;
+    const context = lines.slice(Math.max(0, index - 1), index + 3).join("\n");
+    const venueMatch = context.match(/(?:会場|VENUE|Venue)\s*[:：]?\s*([^\n|]{2,60})/);
+    if (venueMatch) return { dateMatch, venueMatch, context };
+  }
+  return null;
 }
 
 function record(value) {

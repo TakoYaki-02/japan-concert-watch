@@ -17,12 +17,12 @@ for (const source of SOURCES) {
   let count = 0;
   try {
     const entry = await fetchPage(source.entryUrl);
-    if (source.key === "udiscovermusic") {
+    if (source.key === "udiscovermusic" || source.parseEntry) {
       const entryRecords = parseConcertPage(entry.body, entry.url, source, entry.fetchedAt, entry.contentHash);
       allRecords.push(...entryRecords);
       count += entryRecords.length;
     }
-    const links = source.key === "udiscovermusic" ? [] : discoverLinks(entry.body, entry.url, source);
+    const links = source.key === "udiscovermusic" ? [] : discoverLinks(entry.body, entry.url, source, source.maxDetailPages ?? 12);
     const results = await Promise.allSettled(links.map(async (url) => {
       const page = await fetchPage(url);
       return parseConcertPage(page.body, page.url, source, page.fetchedAt, page.contentHash);

@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import { AlertCircle, Bell, CalendarRange, ChevronLeft, ChevronRight, Database, RefreshCw, Search, SlidersHorizontal, Star } from "lucide-react";
+import { AlertCircle, Bell, CalendarRange, ChevronLeft, ChevronRight, Database, RefreshCw, Search, SlidersHorizontal, Sparkles, Star } from "lucide-react";
 import { ConcertCard } from "./components/ConcertCard";
 import { Button } from "./components/ui/Button";
 import { formatMonth, monthKey } from "./lib";
-import type { ConcertData } from "./types";
+import type { Concert, ConcertData } from "./types";
 
 const EMPTY: ConcertData = { schemaVersion: 1, generatedAt: null, concerts: [], sourceStatus: [] };
 const currentMonth = new Date().toLocaleDateString("sv-SE", { year: "numeric", month: "2-digit", timeZone: "Asia/Tokyo" });
@@ -22,8 +22,9 @@ export default function App() {
   const [loadError, setLoadError] = useState(false);
   const [month, setMonth] = useState(currentMonth);
   const [query, setQuery] = useState("");
-  const [prefecture, setPrefecture] = useState("all");
+  const [prefecture, setPrefecture] = useState("kanto3");
   const [source, setSource] = useState("all");
+  const [newOnly, setNewOnly] = useState(false);
   const [favorites, setFavorites] = useState<string[]>(() => {
     try { return JSON.parse(localStorage.getItem(FAVORITES_KEY) ?? "[]"); } catch { return []; }
   });
@@ -62,12 +63,13 @@ export default function App() {
   const prefectures = useMemo(() => [...new Set(data.concerts.map((concert) => concert.prefecture))].sort(), [data]);
   const sources = useMemo(() => [...new Map(data.concerts.flatMap((concert) => concert.sources).map((item) => [item.key, item])).values()], [data]);
   const filtered = useMemo(() => data.concerts
-    .filter((concert) => monthKey(concert.performanceDate) === month)
-    .filter((concert) => prefecture === "all" || concert.prefecture === prefecture)
+    .filter((concert) => newOnly || monthKey(concert.performanceDate) === month)
+    .filter((concert) => !newOnly || isNewConcert(concert))
+    .filter((concert) => prefecture === "all" || (prefecture === "kanto3" ? ["東京都", "千葉県", "神奈川県"].includes(concert.prefecture) : concert.prefecture === prefecture))
     .filter((concert) => source === "all" || concert.sources.some((item) => item.key === source))
     .filter((concert) => !favoritesOnly || favorites.includes(concert.artistName))
     .filter((concert) => `${concert.artistName} ${concert.title ?? ""} ${concert.venueName}`.toLocaleLowerCase("ja").includes(query.trim().toLocaleLowerCase("ja")))
-    .sort((a, b) => a.performanceDate.localeCompare(b.performanceDate) || (a.startTime ?? "").localeCompare(b.startTime ?? "")), [data, month, prefecture, query, source, favoritesOnly, favorites]);
+    .sort((a, b) => a.performanceDate.localeCompare(b.performanceDate) || (a.startTime ?? "").localeCompare(b.startTime ?? "")), [data, month, prefecture, query, source, favoritesOnly, favorites, newOnly]);
 
   return (
     <div className="min-h-screen">
@@ -84,18 +86,19 @@ export default function App() {
         <section className="rounded-3xl bg-ink px-5 py-7 text-white shadow-xl shadow-ink/10 sm:px-8 sm:py-9">
           <p className="text-sm font-semibold text-white/60">CONCERT CALENDAR</p>
           <div className="mt-3 flex items-center justify-between gap-3">
-            <Button aria-label="前月" onClick={() => setMonth(shiftMonth(month, -1))} className="border-white/15 bg-white/10 text-white hover:bg-white/20"><ChevronLeft className="size-5" /></Button>
-            <h1 className="text-center text-3xl font-black tracking-tight sm:text-4xl">{formatMonth(month)}</h1>
-            <Button aria-label="翌月" onClick={() => setMonth(shiftMonth(month, 1))} className="border-white/15 bg-white/10 text-white hover:bg-white/20"><ChevronRight className="size-5" /></Button>
+            <Button aria-label="前月" disabled={newOnly} onClick={() => setMonth(shiftMonth(month, -1))} className="border-white/15 bg-white/10 text-white hover:bg-white/20"><ChevronLeft className="size-5" /></Button>
+            <h1 className="text-center text-3xl font-black tracking-tight sm:text-4xl">{newOnly ? "新着公演" : formatMonth(month)}</h1>
+            <Button aria-label="翌月" disabled={newOnly} onClick={() => setMonth(shiftMonth(month, 1))} className="border-white/15 bg-white/10 text-white hover:bg-white/20"><ChevronRight className="size-5" /></Button>
           </div>
           <p className="mt-3 text-center text-sm text-white/60">{filtered.length}件の公演</p>
         </section>
 
-        <section aria-label="絞り込み" className="relative z-10 -mt-1 grid gap-3 rounded-2xl border border-line bg-white p-4 shadow-lg shadow-ink/5 sm:-mt-4 sm:grid-cols-[1fr_auto_auto] sm:p-5">
+        <section aria-label="絞り込み" className="relative z-10 -mt-1 grid gap-3 rounded-2xl border border-line bg-white p-4 shadow-lg shadow-ink/5 sm:-mt-4 sm:grid-cols-2 sm:p-5 lg:grid-cols-[minmax(14rem,1fr)_auto_auto_auto_auto]">
           <label className="relative"><span className="sr-only">アーティストや会場を検索</span><Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted" /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="アーティスト・会場を検索" className="h-11 w-full rounded-xl border border-line bg-canvas pl-10 pr-3 outline-none focus:border-brand focus:ring-2 focus:ring-brand/10" /></label>
-          <label className="relative"><SlidersHorizontal className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted" /><span className="sr-only">都道府県</span><select value={prefecture} onChange={(event) => setPrefecture(event.target.value)} className="h-11 min-w-36 appearance-none rounded-xl border border-line bg-white pl-10 pr-8 outline-none focus:border-brand"><option value="all">全国</option>{prefectures.map((item) => <option key={item}>{item}</option>)}</select></label>
+          <label className="relative"><SlidersHorizontal className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted" /><span className="sr-only">地域</span><select value={prefecture} onChange={(event) => setPrefecture(event.target.value)} className="h-11 min-w-36 appearance-none rounded-xl border border-line bg-white pl-10 pr-8 outline-none focus:border-brand"><option value="kanto3">関東3県（東京・千葉・神奈川）</option><option value="all">全国</option>{prefectures.map((item) => <option key={item}>{item}</option>)}</select></label>
           <label><span className="sr-only">情報元</span><select value={source} onChange={(event) => setSource(event.target.value)} className="h-11 w-full min-w-40 rounded-xl border border-line bg-white px-3 outline-none focus:border-brand"><option value="all">すべての情報元</option>{sources.map((item) => <option key={item.key} value={item.key}>{item.name}</option>)}</select></label>
           <button type="button" aria-pressed={favoritesOnly} onClick={() => setFavoritesOnly((value) => !value)} className={`inline-flex h-11 items-center justify-center gap-2 rounded-xl border px-3 text-sm font-semibold transition ${favoritesOnly ? "border-amber-300 bg-amber-50 text-amber-700" : "border-line bg-white text-muted"}`}><Star className={`size-4 ${favoritesOnly ? "fill-current" : ""}`} />お気に入りのみ</button>
+          <button type="button" aria-pressed={newOnly} onClick={() => setNewOnly((value) => !value)} className={`inline-flex h-11 items-center justify-center gap-2 rounded-xl border px-3 text-sm font-semibold transition ${newOnly ? "border-orange-300 bg-orange-50 text-orange-700" : "border-line bg-white text-muted"}`}><Sparkles className="size-4" />全期間のNEW</button>
         </section>
 
         <section className="mt-7 grid gap-4">
@@ -121,7 +124,12 @@ function notifyFavoriteConcerts(data: ConcertData, favorites: string[]) {
   let notified: string[] = [];
   try { notified = JSON.parse(localStorage.getItem(NOTIFIED_KEY) ?? "[]"); } catch { notified = []; }
   const now = Date.now();
-  const fresh = data.concerts.filter((concert) => favorites.includes(concert.artistName) && now - new Date(concert.firstDetectedAt).getTime() <= 7 * 86400000 && !notified.includes(concert.id));
+  const fresh = data.concerts.filter((concert) => favorites.includes(concert.artistName) && now - new Date(concert.firstDetectedAt).getTime() <= 40 * 86400000 && !notified.includes(concert.id));
   fresh.slice(0, 3).forEach((concert) => new Notification(`${concert.artistName}の来日公演`, { body: `${concert.performanceDate} ${concert.venueName}` }));
   if (fresh.length) localStorage.setItem(NOTIFIED_KEY, JSON.stringify([...new Set([...notified, ...fresh.map((concert) => concert.id)])].slice(-200)));
+}
+
+function isNewConcert(concert: Concert) {
+  const age = Date.now() - new Date(concert.firstDetectedAt).getTime();
+  return age >= 0 && age <= 40 * 86400000;
 }

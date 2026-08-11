@@ -5,10 +5,33 @@ const VENUE_ALIASES = new Map([
   ["東京ドーム", "東京ドーム"], ["tokyodome", "東京ドーム"],
   ["kアリーナ横浜", "Kアリーナ横浜"], ["karena横浜", "Kアリーナ横浜"],
   ["さいたまスーパーアリーナ", "さいたまスーパーアリーナ"], ["saitamasuperarena", "さいたまスーパーアリーナ"],
+  ["国立競技場", "国立競技場"], ["mufgスタジアム国立競技場", "国立競技場"],
 ]);
 
 export function normalizeText(value = "") {
   return value.normalize("NFKC").toLocaleLowerCase("ja").replace(/[\s・･\-—–_.,'’"“”()（）\[\]【】/／]/g, "");
+}
+
+const ARTIST_ALIASES = new Map([
+  ["thegreatestrockfukuoka", "thegreatestrockfukuoka"],
+  ["チェットフェイカー", "chetfaker"],
+  ["ジャーニー", "journey"],
+  ["エピカ", "epica"],
+  ["カタトニア", "katatonia"],
+  ["アス", "us"],
+  ["staykids", "straykids"],
+  ["mei2ndarena", "mei"],
+  ["treasurethestage2026injapan", "treasure"],
+  ["inidome", "ini"],
+  ["bigbang20thanniversary", "bigbang"],
+]);
+
+export function normalizeArtist(value = "") {
+  const withoutNotes = value.normalize("NFKC").replace(/[（(](?:Opening Act|Guest|Support|出演)[^）)]*[）)]/gi, "").trim();
+  const segments = withoutNotes.split(/\s*[／/]\s*/).map((item) => item.trim()).filter(Boolean);
+  const latinSegment = [...segments].reverse().find((item) => /[a-z]/i.test(item));
+  const normalized = normalizeText(latinSegment ?? segments[0] ?? withoutNotes);
+  return ARTIST_ALIASES.get(normalized) ?? normalized;
 }
 
 export function normalizeVenue(value = "") {
@@ -42,8 +65,7 @@ export function dedupeConcerts(records, previous = []) {
 }
 
 export function identityKey(record) {
-  const timeDiscriminator = record.startTime && record.title ? `|${record.startTime}|${normalizeText(record.title)}` : "";
-  return `${normalizeText(record.artistName)}|${record.performanceDate}|${normalizeVenue(record.venueName)}${timeDiscriminator}`;
+  return `${normalizeArtist(record.artistName)}|${record.performanceDate}|${normalizeVenue(record.venueName)}`;
 }
 
 function uniqueSources(items) { return [...new Map(items.map((item) => [`${item.key}|${item.url}`, item])).values()]; }

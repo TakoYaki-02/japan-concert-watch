@@ -55,6 +55,22 @@ export const SOURCES = [
     allowedHosts: ["www.club-quattro.com", "club-quattro.com"],
     detailPath: /^\/(shibuya|umeda|nagoya|hiroshima)\/schedule\/detail\//,
   },
+  {
+    key: "kpop-concert-nav",
+    name: "K-POPコンサートナビ",
+    entryUrl: "https://kpop-concert.jp/events",
+    allowedHosts: ["kpop-concert.jp", "www.kpop-concert.jp"],
+    detailPath: /^$/,
+    parseEntry: true,
+  },
+  {
+    key: "kpop-music-now",
+    name: "K-POP MUSIC NOW LIVE",
+    entryUrl: "https://kpop.music-now.live/event/year/2026/",
+    allowedHosts: ["kpop.music-now.live"],
+    detailPath: /^$/,
+    parseEntry: true,
+  },
 ];
 
 export function sourceForUrl(url) {

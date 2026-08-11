@@ -31,7 +31,7 @@ export function formatDateTime(value?: string | null) {
 export function isNew(concert: Concert, now = new Date()) {
   const detected = new Date(concert.firstDetectedAt);
   const age = now.getTime() - detected.getTime();
-  return age >= 0 && age <= 7 * 24 * 60 * 60 * 1000;
+  return age >= 0 && age <= 40 * 24 * 60 * 60 * 1000;
 }
 
 export function safeHttpUrl(value: string) {
