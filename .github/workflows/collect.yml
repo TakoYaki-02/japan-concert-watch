@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: .cache/http
           key: concert-http-${{ runner.os }}-${{ github.run_id }}
