@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-14T23:53:22.951Z",
+  "generatedAt": "2026-09-15T23:32:15.240Z",
   "concerts": [
     {
       "artistName": "EPICA",
@@ -17222,7 +17222,7 @@
       "key": "udo",
       "name": "UDO音楽事務所",
       "status": "ok",
-      "fetchedAt": "2026-09-14T23:52:56.732Z",
+      "fetchedAt": "2026-09-15T23:32:12.728Z",
       "count": 30,
       "message": "取得完了"
     },
@@ -17230,7 +17230,7 @@
       "key": "creativeman",
       "name": "Creativeman",
       "status": "ok",
-      "fetchedAt": "2026-09-14T23:52:57.843Z",
+      "fetchedAt": "2026-09-15T23:32:13.151Z",
       "count": 1,
       "message": "取得完了"
     },
@@ -17238,7 +17238,7 @@
       "key": "smash",
       "name": "SMASH",
       "status": "ok",
-      "fetchedAt": "2026-09-14T23:53:01.620Z",
+      "fetchedAt": "2026-09-15T23:32:13.215Z",
       "count": 18,
       "message": "取得完了"
     },
@@ -17246,7 +17246,7 @@
       "key": "livenation",
       "name": "Live Nation Japan / H.I.P.",
       "status": "error",
-      "fetchedAt": "2026-09-14T23:53:06.238Z",
+      "fetchedAt": "2026-09-15T23:32:13.355Z",
       "count": 0,
       "message": "robots.txtにより取得不可: /event/allevents"
     },
@@ -17254,7 +17254,7 @@
       "key": "kyodotokyo",
       "name": "キョードー東京",
       "status": "error",
-      "fetchedAt": "2026-09-14T23:53:06.352Z",
+      "fetchedAt": "2026-09-15T23:32:13.664Z",
       "count": 0,
       "message": "robots.txtにより取得不可: /"
     },
@@ -17262,7 +17262,7 @@
       "key": "billboard-live",
       "name": "Billboard Live",
       "status": "ok",
-      "fetchedAt": "2026-09-14T23:53:06.863Z",
+      "fetchedAt": "2026-09-15T23:32:14.223Z",
       "count": 0,
       "message": "取得完了"
     },
@@ -17270,7 +17270,7 @@
       "key": "udiscovermusic",
       "name": "uDiscoverMusic Japan",
       "status": "ok",
-      "fetchedAt": "2026-09-14T23:53:11.947Z",
+      "fetchedAt": "2026-09-15T23:32:14.706Z",
       "count": 380,
       "message": "取得完了"
     },
@@ -17278,7 +17278,7 @@
       "key": "club-quattro",
       "name": "CLUB QUATTRO",
       "status": "ok",
-      "fetchedAt": "2026-09-14T23:53:14.517Z",
+      "fetchedAt": "2026-09-15T23:32:14.774Z",
       "count": 0,
       "message": "取得完了"
     },
@@ -17286,7 +17286,7 @@
       "key": "kpop-concert-nav",
       "name": "K-POPコンサートナビ",
       "status": "ok",
-      "fetchedAt": "2026-09-14T23:53:18.800Z",
+      "fetchedAt": "2026-09-15T23:32:14.907Z",
       "count": 292,
       "message": "取得完了"
     },
@@ -17294,7 +17294,7 @@
       "key": "kpop-music-now",
       "name": "K-POP MUSIC NOW LIVE",
       "status": "ok",
-      "fetchedAt": "2026-09-14T23:53:19.909Z",
+      "fetchedAt": "2026-09-15T23:32:15.074Z",
       "count": 67,
       "message": "取得完了"
     }
