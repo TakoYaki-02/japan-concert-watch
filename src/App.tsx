@@ -71,6 +71,16 @@ export default function App() {
     .filter((concert) => `${concert.artistName} ${concert.title ?? ""} ${concert.venueName}`.toLocaleLowerCase("ja").includes(query.trim().toLocaleLowerCase("ja")))
     .sort((a, b) => a.performanceDate.localeCompare(b.performanceDate) || (a.startTime ?? "").localeCompare(b.startTime ?? "")), [data, month, prefecture, query, source, favoritesOnly, favorites, newOnly]);
 
+  const artistGroups = useMemo(() => {
+    const groups = new Map<string, Concert[]>();
+    for (const concert of filtered) {
+      const group = groups.get(concert.artistName);
+      if (group) group.push(concert);
+      else groups.set(concert.artistName, [concert]);
+    }
+    return [...groups.entries()];
+  }, [filtered]);
+
   return (
     <div className="min-h-screen">
       <header className="border-b border-line bg-surface/90 backdrop-blur">
@@ -104,7 +114,7 @@ export default function App() {
         <section className="mt-7 grid gap-4">
           {loading && <Message icon={<RefreshCw className="size-6 animate-spin" />} title="公演情報を読み込んでいます" />}
           {loadError && <Message icon={<AlertCircle className="size-6" />} title="公演情報を読み込めませんでした" detail="しばらくしてから再読み込みしてください。" />}
-          {!loading && !loadError && filtered.map((concert) => <ConcertCard concert={concert} favorite={favorites.includes(concert.artistName)} onToggleFavorite={() => toggleFavorite(concert.artistName)} key={concert.id} />)}
+          {!loading && !loadError && artistGroups.map(([artistName, concerts]) => <ConcertCard concerts={concerts} favorite={favorites.includes(artistName)} onToggleFavorite={() => toggleFavorite(artistName)} key={artistName} />)}
           {!loading && !loadError && filtered.length === 0 && <Message icon={<Database className="size-7" />} title={data.generatedAt ? "条件に一致する公演はありません" : "まだ公演情報が収集されていません"} detail={data.generatedAt ? "月や検索条件を変更してお試しください。" : "npm run collect または定期ワークフローの実行後に表示されます。"} />}
         </section>
 

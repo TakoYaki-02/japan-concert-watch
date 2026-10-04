@@ -1,13 +1,41 @@
-import { ExternalLink, MapPin, Star, Ticket } from "lucide-react";
+import { useId, useState } from "react";
+import { ChevronDown, ChevronUp, ExternalLink, MapPin, Star, Ticket } from "lucide-react";
 import { Badge } from "./ui/Badge";
 import { Card } from "./ui/Card";
+import { Button } from "./ui/Button";
 import { formatDate, formatDateTime, isNew, safeHttpUrl } from "../lib";
 import type { Concert } from "../types";
 
-export function ConcertCard({ concert, favorite, onToggleFavorite }: { concert: Concert; favorite: boolean; onToggleFavorite: () => void }) {
-  const status = concert.status === "cancelled" ? "中止" : concert.status === "postponed" ? "延期" : null;
+export function ConcertCard({ concerts, favorite, onToggleFavorite }: { concerts: Concert[]; favorite: boolean; onToggleFavorite: () => void }) {
+  const [expanded, setExpanded] = useState(false);
+  const remainingId = useId();
+  const artistName = concerts[0].artistName;
   return (
     <Card className="overflow-hidden p-5 sm:p-6">
+      <div className="mb-4 flex items-start gap-3">
+        <div className="min-w-0 flex-1">
+          <h2 className="text-xl font-extrabold leading-tight tracking-tight sm:text-2xl">{artistName}</h2>
+          <span className="mt-2 inline-block rounded-full bg-canvas px-3 py-1 text-xs text-muted">{concerts.length}公演</span>
+        </div>
+        <button type="button" onClick={onToggleFavorite} aria-label={favorite ? `${artistName}をお気に入りから外す` : `${artistName}をお気に入りに追加`} aria-pressed={favorite} className={`grid size-10 shrink-0 place-items-center rounded-full border transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${favorite ? "border-amber-300 bg-amber-50 text-amber-500" : "border-line text-muted hover:border-amber-300 hover:text-amber-500"}`}><Star className={`size-5 ${favorite ? "fill-current" : ""}`} /></button>
+      </div>
+      <ConcertDetails concert={concerts[0]} />
+      {concerts.length > 1 && <>
+        <div id={remainingId} hidden={!expanded}>
+          {concerts.slice(1).map((concert) => <div key={concert.id} className="mt-5 border-t border-line pt-5"><ConcertDetails concert={concert} /></div>)}
+        </div>
+        <Button className="mt-5 w-full text-brand" aria-expanded={expanded} aria-controls={remainingId} onClick={() => setExpanded((value) => !value)}>
+          {expanded ? <ChevronUp className="size-4" aria-hidden /> : <ChevronDown className="size-4" aria-hidden />}
+          {expanded ? "公演を折りたたむ" : `残り${concerts.length - 1}公演を表示`}
+        </Button>
+      </>}
+    </Card>
+  );
+}
+
+function ConcertDetails({ concert }: { concert: Concert }) {
+  const status = concert.status === "cancelled" ? "中止" : concert.status === "postponed" ? "延期" : null;
+  return (
       <div className="flex items-start gap-4">
         <div className="hidden min-w-20 rounded-2xl bg-ink px-3 py-3 text-center text-white sm:block">
           <span className="block text-sm font-medium text-white/70">公演日</span>
@@ -18,10 +46,6 @@ export function ConcertCard({ concert, favorite, onToggleFavorite }: { concert: 
             {isNew(concert) && <Badge tone="new">NEW</Badge>}
             {status && <Badge tone="danger">{status}</Badge>}
             <span className="text-sm font-semibold text-brand sm:hidden">{formatDate(concert.performanceDate)}</span>
-          </div>
-          <div className="flex items-start gap-3">
-            <h2 className="min-w-0 flex-1 text-xl font-extrabold leading-tight tracking-tight sm:text-2xl">{concert.artistName}</h2>
-            <button type="button" onClick={onToggleFavorite} aria-label={favorite ? `${concert.artistName}をお気に入りから外す` : `${concert.artistName}をお気に入りに追加`} aria-pressed={favorite} className={`grid size-10 shrink-0 place-items-center rounded-full border transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${favorite ? "border-amber-300 bg-amber-50 text-amber-500" : "border-line text-muted hover:border-amber-300 hover:text-amber-500"}`}><Star className={`size-5 ${favorite ? "fill-current" : ""}`} /></button>
           </div>
           {concert.title && <p className="mt-1 text-sm text-muted">{concert.title}</p>}
           <div className="mt-4 grid gap-2 text-sm sm:grid-cols-2">
@@ -42,6 +66,5 @@ export function ConcertCard({ concert, favorite, onToggleFavorite }: { concert: 
           </div>
         </div>
       </div>
-    </Card>
   );
 }
