@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T00:23:03.689Z",
+  "generatedAt": "2026-10-20T23:55:00.067Z",
   "concerts": [
     {
       "artistName": "TMG（Tak Matsumoto Group）",
@@ -17321,7 +17321,7 @@
       "key": "udo",
       "name": "UDO音楽事務所",
       "status": "ok",
-      "fetchedAt": "2026-10-20T00:22:43.607Z",
+      "fetchedAt": "2026-10-20T23:54:56.856Z",
       "count": 33,
       "message": "取得完了"
     },
@@ -17329,7 +17329,7 @@
       "key": "creativeman",
       "name": "Creativeman",
       "status": "ok",
-      "fetchedAt": "2026-10-20T00:22:44.684Z",
+      "fetchedAt": "2026-10-20T23:54:57.374Z",
       "count": 0,
       "message": "取得完了"
     },
@@ -17337,7 +17337,7 @@
       "key": "smash",
       "name": "SMASH",
       "status": "ok",
-      "fetchedAt": "2026-10-20T00:22:46.133Z",
+      "fetchedAt": "2026-10-20T23:54:57.383Z",
       "count": 22,
       "message": "取得完了"
     },
@@ -17345,7 +17345,7 @@
       "key": "livenation",
       "name": "Live Nation Japan / H.I.P.",
       "status": "error",
-      "fetchedAt": "2026-10-20T00:22:50.152Z",
+      "fetchedAt": "2026-10-20T23:54:57.500Z",
       "count": 0,
       "message": "robots.txtにより取得不可: /event/allevents"
     },
@@ -17353,7 +17353,7 @@
       "key": "kyodotokyo",
       "name": "キョードー東京",
       "status": "error",
-      "fetchedAt": "2026-10-20T00:22:50.402Z",
+      "fetchedAt": "2026-10-20T23:54:57.683Z",
       "count": 0,
       "message": "robots.txtにより取得不可: /"
     },
@@ -17361,7 +17361,7 @@
       "key": "billboard-live",
       "name": "Billboard Live",
       "status": "error",
-      "fetchedAt": "2026-10-20T00:22:50.872Z",
+      "fetchedAt": "2026-10-20T23:54:58.186Z",
       "count": 0,
       "message": "robots.txtにより取得不可: /tokyo/schedules"
     },
@@ -17369,7 +17369,7 @@
       "key": "udiscovermusic",
       "name": "uDiscoverMusic Japan",
       "status": "ok",
-      "fetchedAt": "2026-10-20T00:22:51.848Z",
+      "fetchedAt": "2026-10-20T23:54:59.509Z",
       "count": 326,
       "message": "取得完了"
     },
@@ -17377,7 +17377,7 @@
       "key": "club-quattro",
       "name": "CLUB QUATTRO",
       "status": "partial",
-      "fetchedAt": "2026-10-20T00:22:52.334Z",
+      "fetchedAt": "2026-10-20T23:54:59.560Z",
       "count": 0,
       "message": "1ページを取得できませんでした"
     },
@@ -17385,7 +17385,7 @@
       "key": "kpop-concert-nav",
       "name": "K-POPコンサートナビ",
       "status": "ok",
-      "fetchedAt": "2026-10-20T00:22:56.884Z",
+      "fetchedAt": "2026-10-20T23:54:59.664Z",
       "count": 409,
       "message": "取得完了"
     },
@@ -17393,7 +17393,7 @@
       "key": "kpop-music-now",
       "name": "K-POP MUSIC NOW LIVE",
       "status": "ok",
-      "fetchedAt": "2026-10-20T00:22:58.433Z",
+      "fetchedAt": "2026-10-20T23:54:59.949Z",
       "count": 49,
       "message": "取得完了"
     }
