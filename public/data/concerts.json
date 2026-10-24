@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T23:52:08.312Z",
+  "generatedAt": "2026-10-24T23:17:54.999Z",
   "concerts": [
     {
       "artistName": "TMG（Tak Matsumoto Group）",
@@ -1082,13 +1082,6 @@
           "url": "https://www.straykidsjapan.com/runitjapan/",
           "detectedAt": "2026-10-23T23:52:07.939Z",
           "contentHash": "1cf386170b79e7f7bf929bb0f29f5999e93a5162f46d24a07da379a9dbc0f64a"
-        },
-        {
-          "key": "kpop-music-now",
-          "name": "K-POP MUSIC NOW LIVE",
-          "url": "https://kpop.music-now.live/event/705/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
-          "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
       "id": "aabe34bfa0e457cab602"
@@ -1748,7 +1741,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -1761,7 +1754,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/717/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -1847,13 +1840,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-07T23:31:41.361Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/747/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -2765,7 +2758,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -2778,7 +2771,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/718/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -3359,7 +3352,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-01T00:38:34.493Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -3372,7 +3365,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/772/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -3550,7 +3543,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-01T00:38:34.493Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -3563,7 +3556,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/773/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -3695,13 +3688,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-09T23:17:49.741Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/752/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -3718,13 +3711,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-10-03T23:47:27.720Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/760/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -3925,7 +3918,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-01T00:38:34.493Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -3938,7 +3931,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/774/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -3978,13 +3971,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-09T23:17:49.741Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/753/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -4261,13 +4254,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/719/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -4491,7 +4484,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -4504,7 +4497,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/596/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -4650,7 +4643,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -4663,7 +4656,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/597/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -5646,13 +5639,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/573/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -5961,13 +5954,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/574/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -6237,13 +6230,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-09T23:17:49.741Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/756/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -6260,13 +6253,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-10-08T01:02:21.109Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/761/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -6421,7 +6414,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-23T23:44:11.135Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -6434,7 +6427,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/758/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -6543,13 +6536,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-09T23:17:49.741Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/757/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -6566,13 +6559,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-10-08T01:02:21.109Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/762/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -7210,7 +7203,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -7223,7 +7216,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/689/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -7401,7 +7394,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -7414,7 +7407,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/690/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -7500,13 +7493,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-10-08T01:02:21.109Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/763/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -7615,7 +7608,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -7628,7 +7621,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/691/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -7852,7 +7845,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -7865,7 +7858,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/653/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -8008,7 +8001,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -8021,7 +8014,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/654/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -8376,7 +8369,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-10-08T01:02:19.322Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -8389,7 +8382,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/764/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -8475,7 +8468,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-10-08T01:02:19.322Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -8488,7 +8481,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/765/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -8505,7 +8498,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -8518,7 +8511,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/692/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -8811,7 +8804,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -8824,7 +8817,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/693/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -9866,13 +9859,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/737/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -9889,13 +9882,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-09T23:17:49.741Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/754/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -10050,7 +10043,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -10063,7 +10056,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/694/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -10103,13 +10096,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/738/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -10126,13 +10119,13 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-09T23:17:49.741Z",
-      "lastSeenAt": "2026-10-22T23:59:33.262Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/755/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -10241,7 +10234,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -10254,7 +10247,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/695/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -10363,7 +10356,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -10376,7 +10369,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/696/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -10669,7 +10662,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-04T23:04:03.027Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -10682,7 +10675,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/745/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -10699,7 +10692,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-10-08T01:02:19.322Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -10712,7 +10705,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/766/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -10844,7 +10837,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-09-04T23:04:03.027Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -10857,7 +10850,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/746/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -10897,7 +10890,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-10-08T01:02:19.322Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -10910,7 +10903,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/767/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -11203,7 +11196,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -11216,7 +11209,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/720/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -11256,7 +11249,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -11269,7 +11262,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/721/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -11309,7 +11302,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -11322,7 +11315,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/697/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -11339,7 +11332,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -11352,7 +11345,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/655/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -11369,7 +11362,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -11382,7 +11375,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/722/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -11422,7 +11415,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -11435,7 +11428,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/656/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -11475,7 +11468,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -11488,7 +11481,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/698/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -11505,7 +11498,7 @@
       "generalSaleAt": null,
       "presaleInfo": [],
       "firstDetectedAt": "2026-06-01T00:00:00.000Z",
-      "lastSeenAt": "2026-10-23T23:52:07.939Z",
+      "lastSeenAt": "2026-10-24T23:17:54.884Z",
       "sources": [
         {
           "key": "kpop-concert-nav",
@@ -11518,7 +11511,7 @@
           "key": "kpop-music-now",
           "name": "K-POP MUSIC NOW LIVE",
           "url": "https://kpop.music-now.live/event/723/",
-          "detectedAt": "2026-10-22T23:59:33.262Z",
+          "detectedAt": "2026-10-24T23:17:54.884Z",
           "contentHash": "e669f65d96d0121231dda684d81b4cc2171ef6f257ddf9c45a48f83740606219"
         }
       ],
@@ -17782,7 +17775,7 @@
       "key": "udo",
       "name": "UDO音楽事務所",
       "status": "ok",
-      "fetchedAt": "2026-10-23T23:51:58.340Z",
+      "fetchedAt": "2026-10-24T23:17:43.962Z",
       "count": 34,
       "message": "取得完了"
     },
@@ -17790,7 +17783,7 @@
       "key": "creativeman",
       "name": "Creativeman",
       "status": "ok",
-      "fetchedAt": "2026-10-23T23:51:59.367Z",
+      "fetchedAt": "2026-10-24T23:17:44.412Z",
       "count": 0,
       "message": "取得完了"
     },
@@ -17798,7 +17791,7 @@
       "key": "smash",
       "name": "SMASH",
       "status": "ok",
-      "fetchedAt": "2026-10-23T23:52:00.784Z",
+      "fetchedAt": "2026-10-24T23:17:44.419Z",
       "count": 22,
       "message": "取得完了"
     },
@@ -17806,7 +17799,7 @@
       "key": "livenation",
       "name": "Live Nation Japan / H.I.P.",
       "status": "error",
-      "fetchedAt": "2026-10-23T23:52:04.885Z",
+      "fetchedAt": "2026-10-24T23:17:44.508Z",
       "count": 0,
       "message": "robots.txtにより取得不可: /event/allevents"
     },
@@ -17814,7 +17807,7 @@
       "key": "kyodotokyo",
       "name": "キョードー東京",
       "status": "error",
-      "fetchedAt": "2026-10-23T23:52:05.037Z",
+      "fetchedAt": "2026-10-24T23:17:44.674Z",
       "count": 0,
       "message": "robots.txtにより取得不可: /"
     },
@@ -17822,7 +17815,7 @@
       "key": "billboard-live",
       "name": "Billboard Live",
       "status": "ok",
-      "fetchedAt": "2026-10-23T23:52:05.491Z",
+      "fetchedAt": "2026-10-24T23:17:45.137Z",
       "count": 0,
       "message": "取得完了"
     },
@@ -17830,7 +17823,7 @@
       "key": "udiscovermusic",
       "name": "uDiscoverMusic Japan",
       "status": "ok",
-      "fetchedAt": "2026-10-23T23:52:05.867Z",
+      "fetchedAt": "2026-10-24T23:17:48.275Z",
       "count": 326,
       "message": "取得完了"
     },
@@ -17838,7 +17831,7 @@
       "key": "club-quattro",
       "name": "CLUB QUATTRO",
       "status": "partial",
-      "fetchedAt": "2026-10-23T23:52:06.747Z",
+      "fetchedAt": "2026-10-24T23:17:48.330Z",
       "count": 0,
       "message": "1ページを取得できませんでした"
     },
@@ -17846,7 +17839,7 @@
       "key": "kpop-concert-nav",
       "name": "K-POPコンサートナビ",
       "status": "ok",
-      "fetchedAt": "2026-10-23T23:52:06.857Z",
+      "fetchedAt": "2026-10-24T23:17:52.545Z",
       "count": 432,
       "message": "取得完了"
     },
@@ -17854,8 +17847,8 @@
       "key": "kpop-music-now",
       "name": "K-POP MUSIC NOW LIVE",
       "status": "ok",
-      "fetchedAt": "2026-10-23T23:52:08.185Z",
-      "count": 49,
+      "fetchedAt": "2026-10-24T23:17:52.818Z",
+      "count": 48,
       "message": "取得完了"
     }
   ]
