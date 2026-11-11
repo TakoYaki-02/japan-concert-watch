@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-10T03:35:55.473Z",
+  "generatedAt": "2026-11-11T01:15:28.856Z",
   "concerts": [
     {
       "artistName": "Harakiri for the Sky",
@@ -16876,7 +16876,7 @@
       "key": "udo",
       "name": "UDO音楽事務所",
       "status": "ok",
-      "fetchedAt": "2026-11-10T03:35:32.511Z",
+      "fetchedAt": "2026-11-11T01:15:26.508Z",
       "count": 31,
       "message": "取得完了"
     },
@@ -16884,7 +16884,7 @@
       "key": "creativeman",
       "name": "Creativeman",
       "status": "ok",
-      "fetchedAt": "2026-11-10T03:35:35.607Z",
+      "fetchedAt": "2026-11-11T01:15:26.983Z",
       "count": 8,
       "message": "取得完了"
     },
@@ -16892,7 +16892,7 @@
       "key": "smash",
       "name": "SMASH",
       "status": "ok",
-      "fetchedAt": "2026-11-10T03:35:38.504Z",
+      "fetchedAt": "2026-11-11T01:15:27.078Z",
       "count": 16,
       "message": "取得完了"
     },
@@ -16900,7 +16900,7 @@
       "key": "livenation",
       "name": "Live Nation Japan / H.I.P.",
       "status": "error",
-      "fetchedAt": "2026-11-10T03:35:42.406Z",
+      "fetchedAt": "2026-11-11T01:15:27.173Z",
       "count": 0,
       "message": "robots.txtにより取得不可: /event/allevents"
     },
@@ -16908,7 +16908,7 @@
       "key": "kyodotokyo",
       "name": "キョードー東京",
       "status": "error",
-      "fetchedAt": "2026-11-10T03:35:42.451Z",
+      "fetchedAt": "2026-11-11T01:15:27.357Z",
       "count": 0,
       "message": "robots.txtにより取得不可: /"
     },
@@ -16916,7 +16916,7 @@
       "key": "billboard-live",
       "name": "Billboard Live",
       "status": "ok",
-      "fetchedAt": "2026-11-10T03:35:42.883Z",
+      "fetchedAt": "2026-11-11T01:15:27.928Z",
       "count": 0,
       "message": "取得完了"
     },
@@ -16924,7 +16924,7 @@
       "key": "udiscovermusic",
       "name": "uDiscoverMusic Japan",
       "status": "ok",
-      "fetchedAt": "2026-11-10T03:35:47.159Z",
+      "fetchedAt": "2026-11-11T01:15:28.334Z",
       "count": 337,
       "message": "取得完了"
     },
@@ -16932,7 +16932,7 @@
       "key": "club-quattro",
       "name": "CLUB QUATTRO",
       "status": "ok",
-      "fetchedAt": "2026-11-10T03:35:48.937Z",
+      "fetchedAt": "2026-11-11T01:15:28.392Z",
       "count": 0,
       "message": "取得完了"
     },
@@ -16940,7 +16940,7 @@
       "key": "kpop-concert-nav",
       "name": "K-POPコンサートナビ",
       "status": "ok",
-      "fetchedAt": "2026-11-10T03:35:52.822Z",
+      "fetchedAt": "2026-11-11T01:15:28.493Z",
       "count": 369,
       "message": "取得完了"
     },
@@ -16948,7 +16948,7 @@
       "key": "kpop-music-now",
       "name": "K-POP MUSIC NOW LIVE",
       "status": "ok",
-      "fetchedAt": "2026-11-10T03:35:53.714Z",
+      "fetchedAt": "2026-11-11T01:15:28.721Z",
       "count": 46,
       "message": "取得完了"
     }
